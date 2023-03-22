@@ -44,4 +44,12 @@ public class TestListExamples {
     List<String> filtered = ListExamples.filter(input, new IsMoon());
     assertEquals(expect, filtered);
   }
+
+  @Test(timeout = 500)
+  public void testFilterSingle() {
+    List<String> input = Arrays.asList("Moon", "MOO", "moo");
+    List<String> expect = Arrays.asList("Moon");
+    List<String> filtered = ListExamples.filter(input, new IsMoon());
+    assertEquals(expect, filtered);
+  }
 }
